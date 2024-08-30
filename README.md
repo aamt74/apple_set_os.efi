@@ -18,8 +18,8 @@ cp apple_set_os.efi /boot/efi/EFI/custom
 
 Grub can be configured to start apple_set_os.efi automatically by adding the following lines to  ``/etc/grub.d/40_custom``:
 ```
-search --no-floppy --set=root --label EFI
-chainloader (${root})/EFI/custom/apple_set_os.efi
+search --no-floppy --set=chain_root --label EFI
+chainloader (${chain_root})/EFI/custom/apple_set_os.efi
 boot
 ```
 
